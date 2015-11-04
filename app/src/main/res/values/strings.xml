@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Chuppy</string>
+
+    <string name="title_section1">Profile</string>
+    <string name="title_section2">Food</string>
+    <string name="title_section3">Water</string>
+    <string name="title_section4">Activity</string>
+    <string name="title_section5">Diet</string>
+    <string name="title_section6">Reports</string>
+    <string name="title_section7">Assistant</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_intelligent">INTELLIGENT</string>
+
+    <string name="assist_eat">กิน</string>
+    <string name="assist_drink">ดื่ม</string>
+
+    <string-array name="diseaseList">
+        <item>Select</item>
+        <item>None</item>
+        <item>Kidney Disease</item>
+        <item>Diabetes</item>
+        <item>Atherosclerosis</item>
+        <item>Obesity</item>
+        <item>Gouty</item>
+        <item>Cancer</item>
+        <item>Hypertension</item></string-array>
+</resources>

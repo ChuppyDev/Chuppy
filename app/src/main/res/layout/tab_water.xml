@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/d"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Water"
+        android:textSize="25sp"
+        android:textColor="#fffb7c89"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="156dp"></TextView>
+
+    <ImageView
+        android:layout_width="208dp"
+        android:layout_height="150dp"
+        android:id="@+id/rabbit"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/rabbit" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/waterPerDayTxt"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="30dp" />
+
+    <Button
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:text="Drink"
+        android:id="@+id/drinkButton"
+        android:layout_gravity="center_horizontal"
+        android:onClick="testOnClick"
+        android:background="#ff262626"
+        android:textColor="#ffffffff" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Status : Normal"
+        android:id="@+id/statusTxt"
+        android:textSize="15sp"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
+

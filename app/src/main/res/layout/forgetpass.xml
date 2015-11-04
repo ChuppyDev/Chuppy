@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:padding="20dp"
+    android:id="@+id/email_input">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="153dp"
+        android:id="@+id/imageView2"
+        android:src="@drawable/logo"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="25dp"
+        android:contentDescription="1"
+        android:layout_weight="0.11" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CHUPPY"
+        android:id="@+id/textView3"
+        android:textSize="35dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="THE NEW WAY TO BE SMART"
+        android:id="@+id/textView3"
+        android:layout_marginTop="-5dp"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ARE YOU FORGOT PASSWORD ?"
+        android:id="@+id/textView5"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="16dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:autoText="true"
+        android:layout_alignWithParentIfMissing="false"
+        android:hint="  Email"
+        android:layout_alignBottom="@+id/logo_img"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentEnd="false"
+        android:layout_row="1"
+        android:layout_column="3"
+        android:layout_marginTop="10dp"
+        android:background="#fffd8409"
+        android:layout_weight="0.11"
+        android:textColor="#fffffffb"
+        android:textColorHint="#ffffffff" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter"
+        android:id="@+id/enterButton_forgetpass"
+        android:layout_above="@+id/createidButton"
+        android:layout_alignEnd="@+id/createidButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:background="#ff333333"
+        android:textColorHint="#ffffffff"
+        android:textColor="#ffffffff"
+        android:layout_marginTop="20dp"
+        android:layout_weight="0.13"
+        android:onClick="email_submit_forgetpass"
+        />
+</LinearLayout>

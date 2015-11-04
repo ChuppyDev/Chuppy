@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_row_selector"
+    android:padding="8dp" >
+
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/pic_talking_assit"
+            android:src="@drawable/logo"
+            android:layout_margin="5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentRight="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NAME"
+            android:id="@+id/name_talking_assit"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/pic_talking_assit"
+            android:layout_alignTop="@+id/pic_talking_assit"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/detail_talking_assit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:text="detailname"
+            android:layout_marginLeft="0dp"
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@+id/name_talking_assit"
+            android:layout_below="@+id/name_talking_assit" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/mpic_talking_assis"
+            android:src="@drawable/logo"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:id="@+id/mdetail_talking_assit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:text="detailname"
+            android:layout_below="@+id/mname_talking_assit"
+            android:layout_toLeftOf="@+id/mpic_talking_assis" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NAME"
+            android:id="@+id/mname_talking_assit"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_alignTop="@+id/mpic_talking_assis"
+            android:layout_toStartOf="@+id/mpic_talking_assis" />
+
+    </RelativeLayout>
+</LinearLayout>

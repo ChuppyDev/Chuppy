@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp" android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/assi_dialog_txt"
+        android:layout_marginBottom="10dp" />
+
+    <ListView
+        android:id="@+id/fooddialog_assit"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:divider="@color/list_divider"
+        android:dividerHeight="1dp"
+        android:focusable="false"
+        android:listSelector="@drawable/list_row_selector"
+        android:layout_weight="0.43" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Confirm"
+            android:id="@+id/assi_dialog_conbtn"
+            android:layout_weight="1"
+            android:background="#fffd8409"
+            android:textColor="#ffffffff" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Close"
+            android:id="@+id/assi_dialog_exitbtn"
+            android:layout_weight="1"
+            android:background="#ff262626"
+            android:textColor="#ffffffff" />
+    </LinearLayout>
+
+</LinearLayout>

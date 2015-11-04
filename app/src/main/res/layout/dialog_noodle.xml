@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:clickable="false">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Noodle"
+        android:id="@+id/textView28"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/radioNoodle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:background="#ff6c6c6c">
+
+
+            <RadioButton
+                android:id="@+id/radio_noodle_eggnoodle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:button="@drawable/button_noodle_eggnoodle"
+                android:checked="false"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/radio_noodle_small"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:button="@drawable/button_noodle_small"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="1"
+                android:checked="false" />
+
+            <RadioButton
+                android:id="@+id/radio_noodle_mee"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:button="@drawable/button_noodle_mee"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/radio_noodle_big"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:button="@drawable/button_noodle_big"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:checked="false" />
+
+            <RadioButton
+                android:id="@+id/radio_noodle_woon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:button="@drawable/button_noodle_woon"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:checked="false" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Soup"
+        android:id="@+id/textView29"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/radioSoup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:background="#ff6c6c6c">
+
+
+            <RadioButton
+                android:id="@+id/radio_noodle_soup_clear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:button="@drawable/button_noodle_soup_clear"
+                android:checked="false"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/radio_noodle_soup_thinken"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:button="@drawable/button_noodle_soup_thinken"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="1"
+                android:checked="false" />
+
+            <RadioButton
+                android:id="@+id/radio_noodle_soup_hot"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:button="@drawable/button_noodle_soup_hot"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/radio_noodle_soup_no"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:button="@drawable/button_noodle_soup_no"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:checked="false" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Addition"
+        android:id="@+id/textView30"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/radioAddition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:background="#ff6c6c6c">
+
+            <CheckBox
+                android:id="@+id/radio_noodle_add_pork"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:button="@drawable/button_noodle_add_pork"
+                android:checked="false"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:id="@+id/radio_noodle_add_beef"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:button="@drawable/button_noodle_add_beef"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="1"
+                android:checked="false" />
+
+            <CheckBox
+                android:id="@+id/radio_noodle_add_ball"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:button="@drawable/button_noodle_add_ball"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1" />
+
+            <CheckBox
+                android:id="@+id/radio_noodle_add_chick"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:button="@drawable/button_noodle_add_chick"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:checked="false" />
+            <CheckBox
+                android:id="@+id/radio_noodle_add_egg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:button="@drawable/button_noodle_add_egg"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:checked="false" />
+    </RadioGroup>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="0 Cal"
+        android:id="@+id/calText"
+        android:layout_gravity="center_horizontal" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Confirm"
+            android:id="@+id/confirm_button"
+            android:layout_weight="1"
+            android:background="#fffd8409"
+            android:textColor="#ffffffff" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Close"
+            android:id="@+id/cancle_button"
+            android:layout_weight="1"
+            android:background="#ff262626"
+            android:textColor="#ffffffff" />
+
+    </LinearLayout>
+
+</LinearLayout>

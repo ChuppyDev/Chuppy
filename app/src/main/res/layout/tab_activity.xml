@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activity"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"
+        android:textColor="#fffb8209"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/textView23" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/searchactivityTxt"
+            android:hint="Search..."
+            android:singleLine="true"
+            android:layout_weight="0.95"
+            android:layout_marginLeft="5dp"
+            android:background="#fffdfdfe" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btnspeedactivity"
+            android:src="@drawable/abc_ic_voice_search_api_mtrl_alpha"
+            android:background="#ff000000"
+            android:layout_weight="0.05" />
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/activityListView"
+            android:descendantFocusability="blocksDescendants"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.8" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="4" >
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recentButton"
+                android:src="@drawable/ic_replay_white_24dp"
+                android:background="#fffd8409"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recent"
+                android:id="@+id/textView21"
+                android:layout_weight="0.01"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ff262626" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="4" >
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/favButton"
+                android:src="@drawable/ic_star_white_24dp"
+                android:background="#fffd8409"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Favorite"
+                android:id="@+id/textView24"
+                android:layout_weight="0.01"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ff262626" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="4" >
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/suggestButton"
+                android:src="@drawable/ic_favorite_white_24dp"
+                android:background="#ff262626"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Suggest"
+                android:id="@+id/textView25"
+                android:layout_weight="0.01"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ff262626" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

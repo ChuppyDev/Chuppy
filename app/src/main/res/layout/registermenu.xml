@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:padding="12dp"
+    android:background="#ff525252"
+    android:gravity="center">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CREATE "
+            android:id="@+id/textView"
+            android:singleLine="false"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
+            android:textColor="#fffdfdfe"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:id="@+id/textView2"
+            android:singleLine="false"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
+            android:textColor="#fffd8409"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="#fffdfdfe">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView5"
+            android:src="@drawable/ic_email_white_24dp"
+            android:background="#ff474747"
+            android:padding="5dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/emailTxt"
+            android:hint="Email"
+            android:maxLength="254"
+            android:background="#fffdfdfe"
+            android:textColor="#ff303030"
+            android:textColorHint="#ff303030"
+            android:layout_marginLeft="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="#fffdfdfe">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView6"
+            android:src="@drawable/ic_person_white_24dp"
+            android:background="#ff474747"
+            android:padding="5dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/nameTxt"
+            android:hint="Username"
+            android:maxLength="8"
+            android:background="#fffdfdfe"
+            android:textColor="#ff303030"
+            android:textColorHint="#ff303030"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="#fffdfdfe">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView7"
+            android:src="@drawable/ic_lock_white_24dp"
+            android:background="#ff474747"
+            android:padding="5dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/passwordTxt"
+            android:hint="Password"
+            android:maxLength="12"
+            android:background="#fffdfdfe"
+            android:layout_weight="0.05"
+            android:textColor="#ff303030"
+            android:textColorHint="#ff303030"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="#fffdfdfe">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView8"
+            android:src="@drawable/ic_supervisor_account_white_24dp"
+            android:background="#ff474747"
+            android:padding="5dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/ageTxt"
+            android:layout_gravity="center_horizontal"
+            android:hint="Age"
+            android:maxLength="3"
+            android:background="#fffdfdfe"
+            android:layout_weight="0.05"
+            android:textColor="#ff303030"
+            android:textColorHint="#ff303030"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:id="@+id/radiogroup"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView9"
+            android:src="@drawable/ic_wc_white_24dp"
+            android:background="#ff474747"
+            android:padding="5dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:id="@+id/femaleButton"
+            android:checked="true"
+            android:textColor="#fffdfdfe" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:id="@+id/maleButton"
+            android:textColor="#fffdfdfe" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="#fffdfdfe" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView10"
+            android:src="@drawable/ic_local_hospital_white_24dp"
+            android:background="#ff474747"
+            android:padding="5dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="numberSigned"
+            android:ems="10"
+            android:id="@+id/weightTxt"
+            android:layout_gravity="center_horizontal"
+            android:hint="Weight"
+            android:maxLength="3"
+            android:background="#fffdfdfe"
+            android:textColor="#ff303030"
+            android:textColorHint="#ff303030"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="#fffdfdfe" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView11"
+            android:src="@drawable/ic_local_hospital_white_24dp"
+            android:background="#ff474747"
+            android:padding="5dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="numberSigned"
+            android:ems="10"
+            android:id="@+id/heightTxt"
+            android:layout_gravity="center_horizontal"
+            android:hint="Height"
+            android:maxLength="3"
+            android:background="#fffdfdfe"
+            android:textColor="#ff303030"
+            android:textColorHint="#ff303030"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="#fffdfdfe" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView12"
+            android:src="@drawable/ic_favorite_white_24dp"
+            android:background="#ff474747"
+            android:padding="5dp" />
+
+        <Spinner
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/diseaseSpinner"
+            android:layout_weight="0.10"
+            android:spinnerMode="dialog"
+            android:touchscreenBlocksFocus="false"
+            android:background="#ffffffff" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/submitButton"
+        android:layout_gravity="right"
+        android:background="#fffd8409"
+        android:textColor="#ffffffff"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REPORT"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:textColor="#fffb8209"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"></TextView>
+    <Spinner
+        android:id="@+id/spinnerReport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown" />
+    <HorizontalScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.echo.holographlibrary.BarGraph
+                android:layout_width="1500dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/barGraph" />
+        </LinearLayout>
+
+
+    </HorizontalScrollView>
+
+</LinearLayout>
