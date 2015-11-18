@@ -265,11 +265,9 @@ public class TabUser extends Fragment {
         calburn = data.getCaloriesBurned();
         caleat = data.getCaloriesConsumed();
 
-        if(calburn!=0)
+        if(calburn!=0 && caleat!=0)
         {
-
             percentval02 =  calburn*100/(caleat);
-
         }
         else
         {
@@ -278,24 +276,19 @@ public class TabUser extends Fragment {
         }
 
 
-
-        if(caleat >= calburn)
-        {
-            if(caleat != 0) {
+        if(caleat != 0) {
+            if (caleat >= calburn) {
                 calburn = (calburn * 100) / caleat;
+                caleat = 100;
+            } else {
+                int calmore = calburn - caleat;
+                calburn = (calmore * 100) / caleat;
+                caleat = 100;
+
+                textcolor3 = "#ff16b405";
+                textcolor4 = "#ff438424";
             }
-            caleat = 100;
         }
-        else
-        {
-            int calmore = calburn - caleat;
-            calburn =  (calmore *100)/caleat;
-            caleat = 100;
-
-            textcolor3 = "#ff16b405";
-            textcolor4 = "#ff438424";
-        }
-
 
 
 

@@ -18,6 +18,7 @@ import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -81,6 +82,7 @@ public class TabWater extends Fragment {
             public void onClick(View v) {
                 final Dialog dialog = new Dialog(context);
                 count = 1;
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.dialog_drinkwater);
 
                 name = (TextView)dialog.findViewById(R.id.waterTxt);

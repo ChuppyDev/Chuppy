@@ -26,6 +26,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Status : Normal"
+        android:id="@+id/statusTxt"
+        android:textSize="15sp"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/waterPerDayTxt"
         android:layout_gravity="center_horizontal"
@@ -42,14 +51,6 @@
         android:onClick="testOnClick"
         android:background="#ff262626"
         android:textColor="#ffffffff" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Status : Normal"
-        android:id="@+id/statusTxt"
-        android:textSize="15sp"
-        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
 

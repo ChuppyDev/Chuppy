@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.app.Fragment;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
@@ -39,6 +41,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -54,22 +57,22 @@ public class TabActivity extends Fragment {
 
     EditText searchTxt;
     ListView listView;
-    Button button;
+    Button button,confirmTimerButton,closeButton;
     ArrayList<Workout> activity_list = new ArrayList<Workout>();
     TextView calSum;
-    TextView text,timeVal;
+    TextView text,timeVal,timeValOut,calSumOut;
     int nowPosition;
     ImageButton recentButton;
     ImageButton favButton;
     ImageButton suggestButton;
-
+    LinearLayout timerBox;
     Timer timer;
 
     Queue<Integer> recentIndex;
     ArrayList<Integer> favIndex;
 
     boolean isTimerClick = false;
-
+    boolean isTimerOutClick = false;
     boolean isRecentClicked = false;
     boolean isFavClicked = false;
     boolean isFavMarked = false;
@@ -95,7 +98,13 @@ public class TabActivity extends Fragment {
         favButton = (ImageButton)view.findViewById(R.id.favButton);
         suggestButton = (ImageButton)view.findViewById(R.id.suggestButton);
 
+        timerBox = (LinearLayout)view.findViewById(R.id.timerBox);
+        confirmTimerButton = (Button)view.findViewById(R.id.confirm_button);
+        closeButton = (Button)view.findViewById(R.id.closeButton);
+        timeValOut = (TextView)view.findViewById(R.id.stoptimeText);
+        calSumOut = (TextView)view.findViewById(R.id.calsum);
 
+        timer = new Timer();
 
         recentButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +116,7 @@ public class TabActivity extends Fragment {
                 for(int i = recent_index.size()-1; i >= 0; i--){
                     src_list.add(activity_list.get(recent_index.get(i)).getName());
                 }
+                listView.setVisibility(ListView.VISIBLE);
                 listView.setAdapter(new ArrayAdapter(getActivity()
                         , android.R.layout.simple_list_item_1
                         , src_list));
@@ -123,6 +133,7 @@ public class TabActivity extends Fragment {
                 for(int i = 0;i<favIndex.size();i++){
                     src_list.add(activity_list.get(favIndex.get(i)).getName());
                 }
+                listView.setVisibility(ListView.VISIBLE);
                 listView.setAdapter(new ArrayAdapter(getActivity()
                         , android.R.layout.simple_list_item_1
                         , src_list));
@@ -159,26 +170,28 @@ public class TabActivity extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
+                listView.setVisibility(ListView.VISIBLE);
                 isRecentClicked = false;
                 isFavClicked = false;
                 ArrayList<String> src_list = new ArrayList<String>();
                 int textlength = searchTxt.getText().length();
                 boolean isAddFistPosition = false;
-                for(int i = 0 ; i < activity_list.size() ; i++){
-                    if(searchTxt.getText().toString().matches(""))
+                for (int i = 0; i < activity_list.size(); i++) {
+                    if (searchTxt.getText().toString().matches(""))
                         break;
                     try {
-                        if(searchTxt.getText().toString()
+                        if (searchTxt.getText().toString()
                                 .equalsIgnoreCase(activity_list.get(i).getName()
                                         .subSequence(0, textlength)
-                                        .toString())){
+                                        .toString())) {
                             src_list.add(activity_list.get(i).getName());
-                            if(!isAddFistPosition){
+                            if (!isAddFistPosition) {
                                 nowPosition = i;
                                 isAddFistPosition = true;
                             }
                         }
-                    } catch (Exception e) { }
+                    } catch (Exception e) {
+                    }
                 }
 
                 listView.setAdapter(new ArrayAdapter(getActivity()
@@ -215,7 +228,7 @@ public class TabActivity extends Fragment {
                 dialog.setContentView(R.layout.dialog_activity);
 
                 timeVal = (TextView) dialog.findViewById(R.id.stoptimeText);
-                timer = new Timer(timeVal);
+
                 Button buttonConfirm = (Button) dialog.findViewById(R.id.button_confirm);
                 TextView titleTxt = (TextView)dialog.findViewById(R.id.titleTxt);
                 calSum = (TextView) dialog.findViewById(R.id.dialog_calsum);
@@ -224,16 +237,18 @@ public class TabActivity extends Fragment {
 
                 final NumberPicker numberPicker = (NumberPicker) dialog.findViewById(R.id.numberPicker);
 
+                timer = new Timer(timeVal,activity,calSum,data.getWeight());
+
                 timeVal.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         isTimerClick = !isTimerClick;
-                        if(!isTimerClick){
+                        if(isTimerClick){
                             timer.start();
                         }
                         else{
                             timer.pause();
-                        }
+                            }
                     }
                 });
 
@@ -242,6 +257,7 @@ public class TabActivity extends Fragment {
                     public boolean onLongClick(View v) {
                         isTimerClick = false;
                         timer.reset();
+                        calSum.setText("" + 0 + " Cal");
                         return false;
                     }
                 });
@@ -276,6 +292,7 @@ public class TabActivity extends Fragment {
                         isRecentClicked = false;
                         isFavClicked = false;
                         ArrayList<String> src_list = new ArrayList<String>();
+                        listView.setVisibility(ListView.VISIBLE);
                         listView.setAdapter(new ArrayAdapter(getActivity()
                                 , android.R.layout.simple_list_item_1
                                 , src_list));
@@ -283,6 +300,10 @@ public class TabActivity extends Fragment {
 
                         int minute = numberPicker.getValue() * 30 + 30;
                         float cal = ((minute * data.getWeight()) / activity.getVal());
+                        if (timer.isUse()) {
+                            cal = timer.getCal();
+                            minute = timer.getMinute();
+                        }
                         data.addCaloriesBurned(Math.round(cal));//need to add formula
                         data.activityRecentIndex = recentIndex;
 
@@ -318,6 +339,13 @@ public class TabActivity extends Fragment {
                                 }
                             }
                         }
+                    }
+                });
+
+                dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                    @Override
+                    public void onDismiss(DialogInterface dialog) {
+                        ShowTimer();
                     }
                 });
 
@@ -381,5 +409,57 @@ public class TabActivity extends Fragment {
             }
 
         }
+    }
+    public void ShowTimer()
+    {
+        if(timer.isUse()){
+            timerBox.setVisibility(View.VISIBLE);
+            final DataKeeper data = ((NewHome) getActivity()).getData();
+            final Workout activity = timer.getActivity();
+            timer.setTextView(timeValOut, calSumOut);
+            confirmTimerButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    data.addCaloriesBurned(Math.round(timer.getCal()));//need to add formula
+                    data.activityRecentIndex = recentIndex;
+                    ((NewHome) getActivity()).setData(CheckAchievements(data));
+                    showToast("You " + activity.getName() + " for " + timer.getMinute() + " minute " + timer.getCal() + " Cal.");
+                    timerBox.setVisibility(View.GONE);
+                    timer.reset();
+                    timer = new Timer();
+                }
+            });
+            timeValOut.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    isTimerOutClick = !isTimerOutClick;
+                    if (isTimerOutClick) {
+                        timer.start();
+                    } else {
+                        timer.pause();
+                    }
+                }
+            });
+
+            timeValOut.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    timer.reset();
+                    calSumOut.setText("" + 0 + " Cal");
+                    return false;
+                }
+            });
+            closeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    timerBox.setVisibility(View.GONE);
+                    timer.reset();
+                    timer = new Timer();
+                }
+            });
+        }
+
+
+
     }
 }

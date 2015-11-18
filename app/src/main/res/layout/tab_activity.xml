@@ -39,7 +39,49 @@
             android:layout_weight="0.05" />
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/timerBox"
+        android:gravity="center_horizontal">
 
+        <Button
+            android:layout_width="33dp"
+            android:layout_height="30dp"
+            android:id="@+id/closeButton"
+            android:layout_gravity="right"
+            android:visibility="visible"
+            android:background="@android:drawable/ic_delete" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="0:00:00"
+            android:id="@+id/stoptimeText"
+            android:layout_gravity="center_horizontal"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            android:textColor="#ff000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="text"
+            android:id="@+id/calsum"
+            android:layout_gravity="center_horizontal" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Confirm"
+            android:id="@+id/confirm_button"
+            android:layout_weight="1"
+            android:background="#fffd8409"
+            android:textColor="#ffffffff" />
+    </LinearLayout>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -49,7 +91,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/activityListView"
-            android:descendantFocusability="blocksDescendants"/>
+            android:descendantFocusability="blocksDescendants"
+            android:visibility="visible" />
     </FrameLayout>
 
     <LinearLayout

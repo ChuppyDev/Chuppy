@@ -467,6 +467,9 @@ public class NewHome extends Activity
                 fragment = new TabAssit();
                 fragmentCount.push(position);
                 break;
+            case 7:
+                fragment = new TabRanking();
+                fragmentCount.push(position);
         }
 
         fragmentStack.push(fragment);
